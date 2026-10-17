@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="880" height="500" fill="#0F172A" rx="12"/>
+  
+  <!-- Main Title -->
+  <text x="40" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700" fill="#F8FAFC">Most Frequent Job Titles &amp; Geographical Locations</text>
+  <text x="40" y="65" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94A3B8">High frequency titles like Customer Service and Data Entry are frequent targets for advance-fee scams</text>
+
+  <!-- Left Column: Top 10 Job Titles -->
+  <g transform="translate(40, 90)">
+    <rect width="385" height="380" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+    <text x="20" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#38BDF8">Top 10 Job Titles</text>
+    
+    <!-- Item 1: Customer Service Representative (313) -->
+    <text x="20" y="66" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#E2E8F0">Customer Service Rep.</text>
+    <rect x="175" y="55" width="140" height="13" rx="2" fill="#38BDF8"/>
+    <text x="325" y="66" font-family="monospace" font-size="11" fill="#93C5FD">313</text>
+
+    <!-- Item 2: English Teacher Abroad (311) -->
+    <text x="20" y="96" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#E2E8F0">English Teacher Abroad</text>
+    <rect x="175" y="85" width="139" height="13" rx="2" fill="#38BDF8"/>
+    <text x="325" y="96" font-family="monospace" font-size="11" fill="#93C5FD">311</text>
+
+    <!-- Item 3: User Interface Designer (121) -->
+    <text x="20" y="126" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#E2E8F0">User Interface Designer</text>
+    <rect x="175" y="115" width="54" height="13" rx="2" fill="#0EA5E9"/>
+    <text x="240" y="126" font-family="monospace" font-size="11" fill="#93C5FD">121</text>
+
+    <!-- Item 4: Web Developer (100) -->
+    <text x="20" y="156" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#E2E8F0">Web Developer</text>
+    <rect x="175" y="145" width="45" height="13" rx="2" fill="#0EA5E9"/>
+    <text x="230" y="156" font-family="monospace" font-size="11" fill="#93C5FD">100</text>
+
+    <!-- Item 5: Software Engineer (86) -->
+    <text x="20" y="186" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#E2E8F0">Software Engineer</text>
+    <rect x="175" y="175" width="38" height="13" rx="2" fill="#0EA5E9"/>
+    <text x="223" y="186" font-family="monospace" font-size="11" fill="#93C5FD">86</text>
+
+    <!-- Item 6: Data Entry Clerk (82) -->
+    <text x="20" y="216" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#EF4444" font-weight="600">Data Entry Clerk ⚠️</text>
+    <rect x="175" y="205" width="37" height="13" rx="2" fill="#EF4444"/>
+    <text x="222" y="216" font-family="monospace" font-size="11" fill="#FCA5A5">82</text>
+
+    <!-- Item 7: Project Manager (81) -->
+    <text x="20" y="246" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#E2E8F0">Project Manager</text>
+    <rect x="175" y="235" width="36" height="13" rx="2" fill="#0284C7"/>
+    <text x="221" y="246" font-family="monospace" font-size="11" fill="#93C5FD">81</text>
+
+    <!-- Item 8: Account Executive (77) -->
+    <text x="20" y="276" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#E2E8F0">Account Executive</text>
+    <rect x="175" y="265" width="34" height="13" rx="2" fill="#0284C7"/>
+    <text x="219" y="276" font-family="monospace" font-size="11" fill="#93C5FD">77</text>
+
+    <!-- Item 9: Office Manager (66) -->
+    <text x="20" y="306" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#E2E8F0">Office Manager</text>
+    <rect x="175" y="295" width="29" height="13" rx="2" fill="#0284C7"/>
+    <text x="214" y="306" font-family="monospace" font-size="11" fill="#93C5FD">66</text>
+
+    <!-- Item 10: Product Manager (58) -->
+    <text x="20" y="336" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#E2E8F0">Product Manager</text>
+    <rect x="175" y="325" width="26" height="13" rx="2" fill="#0284C7"/>
+    <text x="211" y="336" font-family="monospace" font-size="11" fill="#93C5FD">58</text>
+
+    <text x="20" y="365" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#64748B">⚠️ Data Entry Clerk has an abnormal 60%+ fraud rate in EMSCAD</text>
+  </g>
+
+  <!-- Right Column: Top 10 Locations -->
+  <g transform="translate(455, 90)">
+    <rect width="385" height="380" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+    <text x="20" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#34D399">Top 10 Locations</text>
+
+    <!-- Loc 1: GB, LND, London (719) -->
+    <text x="20" y="66" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#E2E8F0">GB, LND, London</text>
+    <rect x="175" y="55" width="145" height="13" rx="2" fill="#10B981"/>
+    <text x="330" y="66" font-family="monospace" font-size="11" fill="#6EE7B7">719</text>
+
+    <!-- Loc 2: US, NY, New York (658) -->
+    <text x="20" y="96" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#E2E8F0">US, NY, New York</text>
+    <rect x="175" y="85" width="133" height="13" rx="2" fill="#10B981"/>
+    <text x="318" y="96" font-family="monospace" font-size="11" fill="#6EE7B7">658</text>
+
+    <!-- Loc 3: US, CA, San Francisco (472) -->
+    <text x="20" y="126" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#E2E8F0">US, CA, San Francisco</text>
+    <rect x="175" y="115" width="95" height="13" rx="2" fill="#059669"/>
+    <text x="280" y="126" font-family="monospace" font-size="11" fill="#6EE7B7">472</text>
+
+    <!-- Loc 4: GR, I, Athens (464) -->
+    <text x="20" y="156" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#E2E8F0">GR, I, Athens</text>
+    <rect x="175" y="145" width="94" height="13" rx="2" fill="#059669"/>
+    <text x="279" y="156" font-family="monospace" font-size="11" fill="#6EE7B7">464</text>
+
+    <!-- Loc 5: US, , (339) -->
+    <text x="20" y="186" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#E2E8F0">US, , (Unspecified)</text>
+    <rect x="175" y="175" width="68" height="13" rx="2" fill="#059669"/>
+    <text x="253" y="186" font-family="monospace" font-size="11" fill="#6EE7B7">339</text>
+
+    <!-- Loc 6: US, IL, Chicago (255) -->
+    <text x="20" y="216" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#E2E8F0">US, IL, Chicago</text>
+    <rect x="175" y="205" width="51" height="13" rx="2" fill="#047857"/>
+    <text x="236" y="216" font-family="monospace" font-size="11" fill="#6EE7B7">255</text>
+
+    <!-- Loc 7: US, TX, Houston (251) -->
+    <text x="20" y="246" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#E2E8F0">US, TX, Houston</text>
+    <rect x="175" y="235" width="50" height="13" rx="2" fill="#047857"/>
+    <text x="235" y="246" font-family="monospace" font-size="11" fill="#6EE7B7">251</text>
+
+    <!-- Loc 8: US, CA, Los Angeles (235) -->
+    <text x="20" y="276" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#E2E8F0">US, CA, Los Angeles</text>
+    <rect x="175" y="265" width="47" height="13" rx="2" fill="#047857"/>
+    <text x="232" y="276" font-family="monospace" font-size="11" fill="#6EE7B7">235</text>
+
+    <!-- Loc 9: US, MA, Boston (221) -->
+    <text x="20" y="306" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#E2E8F0">US, MA, Boston</text>
+    <rect x="175" y="295" width="44" height="13" rx="2" fill="#047857"/>
+    <text x="229" y="306" font-family="monospace" font-size="11" fill="#6EE7B7">221</text>
+
+    <!-- Loc 10: US, FL, Orlando (139) -->
+    <text x="20" y="336" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#E2E8F0">US, FL, Orlando</text>
+    <rect x="175" y="325" width="28" height="13" rx="2" fill="#047857"/>
+    <text x="213" y="336" font-family="monospace" font-size="11" fill="#6EE7B7">139</text>
+
+    <text x="20" y="365" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#64748B">India ('IN') ranks 7th among all countries with 276 total postings</text>
+  </g>
+</svg>

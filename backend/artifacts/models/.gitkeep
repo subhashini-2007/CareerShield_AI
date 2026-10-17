@@ -1,0 +1,2 @@
+# This directory stores generated machine learning model binaries and evaluation metrics.
+# Generated files here (*.joblib, evaluation_metrics.json) are kept separate from code and gitignored.

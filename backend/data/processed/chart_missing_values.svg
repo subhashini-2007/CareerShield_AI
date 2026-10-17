@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="800" height="520" fill="#0F172A" rx="12"/>
+  
+  <!-- Title & Subtitle -->
+  <text x="40" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700" fill="#F8FAFC">Missing Value Audit (% of 17,880 Rows)</text>
+  <text x="40" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94A3B8">Features with missing data requiring strategic imputation or missing-indicator encoding</text>
+  
+  <!-- X Grid Lines & Labels -->
+  <!-- Width 500px for 100% (5px = 1%) -->
+  <!-- Left start: 220px -->
+  <line x1="220" y1="90" x2="220" y2="460" stroke="#334155" stroke-width="1"/>
+  <line x1="345" y1="90" x2="345" y2="460" stroke="#1E293B" stroke-dasharray="3 3"/>
+  <line x1="470" y1="90" x2="470" y2="460" stroke="#1E293B" stroke-dasharray="3 3"/>
+  <line x1="595" y1="90" x2="595" y2="460" stroke="#1E293B" stroke-dasharray="3 3"/>
+  <line x1="720" y1="90" x2="720" y2="460" stroke="#1E293B" stroke-dasharray="3 3"/>
+  
+  <text x="220" y="478" font-family="monospace" font-size="11" fill="#64748B" text-anchor="middle">0%</text>
+  <text x="345" y="478" font-family="monospace" font-size="11" fill="#64748B" text-anchor="middle">25%</text>
+  <text x="470" y="478" font-family="monospace" font-size="11" fill="#64748B" text-anchor="middle">50%</text>
+  <text x="595" y="478" font-family="monospace" font-size="11" fill="#64748B" text-anchor="middle">75%</text>
+  <text x="720" y="478" font-family="monospace" font-size="11" fill="#64748B" text-anchor="middle">100%</text>
+
+  <!-- Horizontal Bars (12 features with >0 missing) -->
+  <!-- Row 1: salary_range (83.96% -> 419.8px) -->
+  <text x="205" y="112" font-family="monospace" font-size="12" fill="#F8FAFC" text-anchor="end">salary_range</text>
+  <rect x="220" y="98" width="420" height="18" rx="3" fill="#EF4444"/>
+  <text x="648" y="112" font-family="monospace" font-size="11" font-weight="600" fill="#FCA5A5">83.96% (15,012)</text>
+
+  <!-- Row 2: department (64.58% -> 322.9px) -->
+  <text x="205" y="142" font-family="monospace" font-size="12" fill="#F8FAFC" text-anchor="end">department</text>
+  <rect x="220" y="128" width="323" height="18" rx="3" fill="#F97316"/>
+  <text x="551" y="142" font-family="monospace" font-size="11" font-weight="600" fill="#FDBA74">64.58% (11,547)</text>
+
+  <!-- Row 3: required_education (45.03% -> 225.1px) -->
+  <text x="205" y="172" font-family="monospace" font-size="12" fill="#F8FAFC" text-anchor="end">required_education</text>
+  <rect x="220" y="158" width="225" height="18" rx="3" fill="#F59E0B"/>
+  <text x="453" y="172" font-family="monospace" font-size="11" font-weight="600" fill="#FDE68A">45.03% (8,051)</text>
+
+  <!-- Row 4: benefits (40.32% -> 201.6px) -->
+  <text x="205" y="202" font-family="monospace" font-size="12" fill="#F8FAFC" text-anchor="end">benefits</text>
+  <rect x="220" y="188" width="202" height="18" rx="3" fill="#F59E0B"/>
+  <text x="430" y="202" font-family="monospace" font-size="11" font-weight="600" fill="#FDE68A">40.32% (7,210)</text>
+
+  <!-- Row 5: required_experience (39.43% -> 197.1px) -->
+  <text x="205" y="232" font-family="monospace" font-size="12" fill="#F8FAFC" text-anchor="end">required_experience</text>
+  <rect x="220" y="218" width="197" height="18" rx="3" fill="#3B82F6"/>
+  <text x="425" y="232" font-family="monospace" font-size="11" font-weight="600" fill="#93C5FD">39.43% (7,050)</text>
+
+  <!-- Row 6: function (36.10% -> 180.5px) -->
+  <text x="205" y="262" font-family="monospace" font-size="12" fill="#F8FAFC" text-anchor="end">function</text>
+  <rect x="220" y="248" width="181" height="18" rx="3" fill="#3B82F6"/>
+  <text x="409" y="262" font-family="monospace" font-size="11" font-weight="600" fill="#93C5FD">36.10% (6,455)</text>
+
+  <!-- Row 7: industry (27.42% -> 137.1px) -->
+  <text x="205" y="292" font-family="monospace" font-size="12" fill="#F8FAFC" text-anchor="end">industry</text>
+  <rect x="220" y="278" width="137" height="18" rx="3" fill="#3B82F6"/>
+  <text x="365" y="292" font-family="monospace" font-size="11" font-weight="600" fill="#93C5FD">27.42% (4,903)</text>
+
+  <!-- Row 8: employment_type (19.41% -> 97.0px) -->
+  <text x="205" y="322" font-family="monospace" font-size="12" fill="#F8FAFC" text-anchor="end">employment_type</text>
+  <rect x="220" y="308" width="97" height="18" rx="3" fill="#6366F1"/>
+  <text x="325" y="322" font-family="monospace" font-size="11" font-weight="600" fill="#C7D2FE">19.41% (3,471)</text>
+
+  <!-- Row 9: company_profile (18.50% -> 92.5px) -->
+  <text x="205" y="352" font-family="monospace" font-size="12" fill="#F8FAFC" text-anchor="end">company_profile</text>
+  <rect x="220" y="338" width="93" height="18" rx="3" fill="#6366F1"/>
+  <text x="321" y="352" font-family="monospace" font-size="11" font-weight="600" fill="#C7D2FE">18.50% (3,308)</text>
+
+  <!-- Row 10: requirements (15.07% -> 75.3px) -->
+  <text x="205" y="382" font-family="monospace" font-size="12" fill="#F8FAFC" text-anchor="end">requirements</text>
+  <rect x="220" y="368" width="75" height="18" rx="3" fill="#8B5CF6"/>
+  <text x="303" y="382" font-family="monospace" font-size="11" font-weight="600" fill="#DDD6FE">15.07% (2,695)</text>
+
+  <!-- Row 11: location (1.94% -> 9.7px) -->
+  <text x="205" y="412" font-family="monospace" font-size="12" fill="#F8FAFC" text-anchor="end">location</text>
+  <rect x="220" y="398" width="10" height="18" rx="2" fill="#10B981"/>
+  <text x="238" y="412" font-family="monospace" font-size="11" font-weight="600" fill="#6EE7B7">1.94% (346)</text>
+
+  <!-- Row 12: description (0.01% -> 2px) -->
+  <text x="205" y="442" font-family="monospace" font-size="12" fill="#F8FAFC" text-anchor="end">description</text>
+  <rect x="220" y="428" width="3" height="18" rx="1" fill="#10B981"/>
+  <text x="231" y="442" font-family="monospace" font-size="11" font-weight="600" fill="#6EE7B7">0.01% (1 row)</text>
+
+  <!-- Footer Insight -->
+  <rect x="40" y="492" width="720" height="20" rx="3" fill="#1E293B"/>
+  <text x="400" y="506" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle">
+    Notice: Zero missing values in job_id, title, telecommuting, has_company_logo, has_questions, and fraudulent target.
+  </text>
+</svg>

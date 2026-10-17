@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 420" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="750" height="420" fill="#0F172A" rx="12"/>
+  
+  <!-- Title & Subtitle -->
+  <text x="40" y="45" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700" fill="#F8FAFC">Target Variable Distribution: Genuine vs. Fraudulent</text>
+  <text x="40" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94A3B8">Severe Class Imbalance in EMSCAD Dataset (Total: 17,880 Job Postings)</text>
+  
+  <!-- Grid Lines -->
+  <line x1="80" y1="320" x2="680" y2="320" stroke="#334155" stroke-width="1"/>
+  <line x1="80" y1="260" x2="680" y2="260" stroke="#1E293B" stroke-dasharray="4 4"/>
+  <line x1="80" y1="200" x2="680" y2="200" stroke="#1E293B" stroke-dasharray="4 4"/>
+  <line x1="80" y1="140" x2="680" y2="140" stroke="#1E293B" stroke-dasharray="4 4"/>
+  
+  <!-- Y-Axis Labels -->
+  <text x="70" y="324" font-family="monospace" font-size="11" fill="#64748B" text-anchor="end">0</text>
+  <text x="70" y="264" font-family="monospace" font-size="11" fill="#64748B" text-anchor="end">5k</text>
+  <text x="70" y="204" font-family="monospace" font-size="11" fill="#64748B" text-anchor="end">10k</text>
+  <text x="70" y="144" font-family="monospace" font-size="11" fill="#64748B" text-anchor="end">15k</text>
+  
+  <!-- Bar 1: Genuine (17,014 / 95.16%) -->
+  <!-- Scaled: max 20,000 -> 240px max height; 17014 -> 204px height (320 - 204 = 116) -->
+  <rect x="180" y="116" width="140" height="204" rx="6" fill="#10B981" />
+  <text x="250" y="100" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" fill="#34D399" text-anchor="middle">17,014 (95.16%)</text>
+  <text x="250" y="348" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600" fill="#F8FAFC" text-anchor="middle">Genuine (0)</text>
+  <text x="250" y="368" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#94A3B8" text-anchor="middle">Legitimate Vacancies</text>
+
+  <!-- Bar 2: Fraudulent (866 / 4.84%) -->
+  <!-- Scaled: 866 -> ~11px height (320 - 11 = 309). Ensure min visible height 18px -->
+  <rect x="420" y="302" width="140" height="18" rx="4" fill="#EF4444" />
+  <text x="490" y="286" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" fill="#F87171" text-anchor="middle">866 (4.84%)</text>
+  <text x="490" y="348" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600" fill="#F8FAFC" text-anchor="middle">Fraudulent (1)</text>
+  <text x="490" y="368" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#94A3B8" text-anchor="middle">Scams &amp; Fake Posts</text>
+
+  <!-- Key Insight Callout Badge -->
+  <rect x="40" y="388" width="670" height="24" rx="4" fill="#1E293B"/>
+  <text x="375" y="404" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500" fill="#CBD5E1" text-anchor="middle">
+    ⚠️ Imbalance Ratio ~19.6 : 1 — A naive model predicting all 0s yields 95.16% accuracy while catching 0% of scams. PR-AUC and F1-Score are vital.
+  </text>
+</svg>

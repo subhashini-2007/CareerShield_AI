@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 440" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="780" height="440" fill="#0F172A" rx="12"/>
+  
+  <!-- Header -->
+  <text x="40" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700" fill="#F8FAFC">India Job Postings Analysis (Verified Country Code 'IN')</text>
+  <text x="40" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94A3B8">Evaluating representation, fraud incidence, and domain boundaries for CareerShield AI</text>
+  
+  <!-- Panel 1: Card 1 (India Overview) -->
+  <g transform="translate(40, 95)">
+    <rect width="210" height="135" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+    <text x="20" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#94A3B8" font-weight="600">TOTAL INDIAN POSTINGS</text>
+    <text x="20" y="75" font-family="monospace" font-size="34" font-weight="700" fill="#38BDF8">276</text>
+    <text x="20" y="105" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#64748B">1.54% of global 17,880 ads</text>
+  </g>
+
+  <!-- Panel 1: Card 2 (India Genuine) -->
+  <g transform="translate(270, 95)">
+    <rect width="220" height="135" rx="8" fill="#1E293B" stroke="#065F46" stroke-width="1"/>
+    <text x="20" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#34D399" font-weight="600">GENUINE (INDIA)</text>
+    <text x="20" y="75" font-family="monospace" font-size="34" font-weight="700" fill="#10B981">272</text>
+    <text x="20" y="105" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#94A3B8">98.55% legitimate roles</text>
+  </g>
+
+  <!-- Panel 1: Card 3 (India Fraudulent) -->
+  <g transform="translate(510, 95)">
+    <rect width="230" height="135" rx="8" fill="#1E293B" stroke="#991B1B" stroke-width="1"/>
+    <text x="20" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#F87171" font-weight="600">FRAUDULENT (INDIA)</text>
+    <text x="20" y="75" font-family="monospace" font-size="34" font-weight="700" fill="#EF4444">4</text>
+    <text x="20" y="105" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#FCA5A5">1.45% verified scam rate</text>
+  </g>
+
+  <!-- Comparative Rate Bar Section -->
+  <g transform="translate(40, 255)">
+    <rect width="700" height="110" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+    <text x="24" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#E2E8F0">Fraud Rate Comparison: India vs. Global Baseline</text>
+    
+    <!-- Global Rate Bar (4.84%) -->
+    <text x="24" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#94A3B8">Global EMSCAD (17,880)</text>
+    <rect x="210" y="46" width="360" height="16" rx="3" fill="#334155"/>
+    <rect x="210" y="46" width="174" height="16" rx="3" fill="#F59E0B"/>
+    <text x="395" y="59" font-family="monospace" font-size="11" font-weight="700" fill="#FDE68A">4.84% (866 / 17,880)</text>
+
+    <!-- India Rate Bar (1.45%) -->
+    <text x="24" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#94A3B8">India Subset ('IN', 276)</text>
+    <rect x="210" y="78" width="360" height="16" rx="3" fill="#334155"/>
+    <rect x="210" y="78" width="52" height="16" rx="3" fill="#10B981"/>
+    <text x="274" y="91" font-family="monospace" font-size="11" font-weight="700" fill="#6EE7B7">1.45% (4 / 276) [Scarcity Signal]</text>
+  </g>
+
+  <!-- Strategic Takeaway Box -->
+  <rect x="40" y="380" width="700" height="38" rx="6" fill="#312E81" stroke="#4338CA" stroke-width="1"/>
+  <text x="390" y="404" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="500" fill="#E0E7FF" text-anchor="middle">
+    💡 Verified Insight: Only 4 Indian scams in EMSCAD (earlier 16 mistakenly included Indiana, USA). Rules Engine is essential for India.
+  </text>
+</svg>

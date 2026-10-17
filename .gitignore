@@ -1,0 +1,152 @@
+# ==============================================================================
+# CareerShield AI — Root Git Ignore Configuration
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Environment Variables, Local Overrides & Secrets
+# ------------------------------------------------------------------------------
+.env
+.env.*
+*.env
+*.env.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+backend/.env
+frontend/.env.local
+
+# Allow tracked public environment templates
+!.env.example
+!backend/.env.example
+!frontend/.env.example
+
+# Sensitive credentials, certificates, and keys
+*.pem
+*.key
+*.cert
+*.crt
+*.pfx
+*.p12
+*.id_rsa
+*.id_ed25519
+credentials.json
+token.json
+secrets.json
+
+# ------------------------------------------------------------------------------
+# 2. Local Databases & Persistence
+# ------------------------------------------------------------------------------
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+careershield.db
+backend/careershield.db
+
+# ------------------------------------------------------------------------------
+# 3. Python Virtual Environments, Bytecode & Caches
+# ------------------------------------------------------------------------------
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+backend/venv/
+**/venv/
+
+# Testing & Coverage caches
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# ------------------------------------------------------------------------------
+# 4. Node.js & Next.js Build Output
+# ------------------------------------------------------------------------------
+node_modules/
+**/node_modules/
+frontend/node_modules/
+.next/
+frontend/.next/
+out/
+frontend/out/
+
+# NPM / Yarn / PNPM debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+*.log
+
+# ------------------------------------------------------------------------------
+# 5. Machine Learning Models & Large Raw Datasets
+# ------------------------------------------------------------------------------
+# Large raw EMSCAD datasets (~48MB CSVs) kept out of Git
+backend/data/raw/*
+!backend/data/raw/.gitkeep
+
+# Processed dataset tabular splits kept out of Git, but track EDA chart SVGs
+backend/data/processed/*
+!backend/data/processed/.gitkeep
+!backend/data/processed/*.svg
+
+# ML Model Artifacts:
+# Ignore temporary caches or unexpected binary dumps, but explicitly preserve:
+# - .gitkeep for directory structure
+# - model_metadata.json (Required for /api/v1/analytics/model-transparency & /model-insights)
+# - baseline_pipeline.joblib (Pre-trained baseline model for immediate out-of-the-box inference)
+backend/artifacts/models/*
+!backend/artifacts/models/.gitkeep
+!backend/artifacts/models/model_metadata.json
+!backend/artifacts/models/baseline_pipeline.joblib
+
+# ------------------------------------------------------------------------------
+# 6. Operating System & IDE Files
+# ------------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary & Backup files
+*.bak
+*.backup
+*.old
+*.orig
+backend/app/services/*.bak
+
