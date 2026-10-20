@@ -48,7 +48,7 @@ export default function HistoryPage() {
       setData(res);
     } catch (err) {
       console.error("Failed to fetch analysis history:", err);
-      let msg = "Could not connect to backend to retrieve history. Ensure FastAPI is running on port 8000.";
+      let msg = "Could not connect to the analysis history service. If the server was idle, it may take a moment to wake up. Please retry shortly.";
       if (axios.isAxiosError(err)) {
         msg = err.response?.data?.detail || err.message || msg;
       } else if (err instanceof Error) {
@@ -105,7 +105,7 @@ export default function HistoryPage() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3 py-1 text-xs font-semibold text-purple-300 mb-2">
               <History className="h-3.5 w-3.5" />
-              <span>Persistent Audit Trail — SQLite Database</span>
+              <span>Persistent Audit Trail</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold text-white">
               Job Opportunity Analysis History

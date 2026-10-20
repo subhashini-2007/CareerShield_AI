@@ -31,6 +31,14 @@ async def lifespan(app: FastAPI):
         logger.info(
             f"Successfully connected to database ({settings.database_engine_name}) in {db_health['latency_ms']}ms."
         )
+        # Ensure schema tables exist on empty production/cloud database
+        try:
+            from app.core.database import engine
+            from app.db.base import Base
+            Base.metadata.create_all(bind=engine)
+            logger.info("Database tables verified / created successfully.")
+        except Exception as exc:
+            logger.error(f"Database schema initialization check failed: {exc}")
     else:
         logger.warning(
             f"Database connection could not be established at startup: {db_health['error']}. "

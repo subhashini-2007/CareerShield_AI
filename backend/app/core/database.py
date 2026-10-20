@@ -1,11 +1,13 @@
 """SQLAlchemy database connection management and health diagnostics."""
 
 import logging
+import os
 import time
 from typing import Any, Dict
 
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import declarative_base, sessionmaker
+from sqlalchemy.pool import NullPool
 
 from app.core.config import settings
 
@@ -25,10 +27,22 @@ def create_app_engine(database_url: str):
     if settings.is_sqlite:
         connect_args["check_same_thread"] = False
     else:
-        # PostgreSQL / other production databases
-        engine_kwargs["pool_pre_ping"] = True
-        engine_kwargs["pool_size"] = 10
-        engine_kwargs["max_overflow"] = 20
+        # Check if running in a serverless environment (e.g. Vercel)
+        is_serverless = bool(
+            os.getenv("VERCEL")
+            or os.getenv("AWS_LAMBDA_FUNCTION_NAME")
+            or os.getenv("DB_POOL_NULL", "").lower() in ("true", "1")
+        )
+        if is_serverless:
+            # Serverless functions are stateless: avoid holding open pool connections
+            engine_kwargs["poolclass"] = NullPool
+        else:
+            # Managed PostgreSQL (Neon / Render / production)
+            # pool_recycle=300 aligns with Neon's 5-minute auto-suspend lifecycle
+            engine_kwargs["pool_pre_ping"] = True
+            engine_kwargs["pool_size"] = 5
+            engine_kwargs["max_overflow"] = 10
+            engine_kwargs["pool_recycle"] = 300
 
     return create_engine(
         database_url,

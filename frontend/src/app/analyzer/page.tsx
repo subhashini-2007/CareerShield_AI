@@ -250,7 +250,7 @@ export default function AnalyzerPage() {
       setResult(response);
     } catch (err) {
       console.error("Analysis request failed:", err);
-      let message = "Failed to connect to the CareerShield AI backend. Ensure the FastAPI server is running on port 8000.";
+      let message = "Unable to connect to the CareerShield AI analysis service. If the backend was sleeping, it may take a few moments to spin up. Please try again.";
       if (axios.isAxiosError(err)) {
         message = err.response?.data?.detail || err.message || message;
       } else if (err instanceof Error) {

@@ -1,0 +1,44 @@
+# ==============================================================================
+# CareerShield AI — Render Web Service Blueprint (Free Tier)
+# ==============================================================================
+# Tagline: Verify Opportunities. Protect Futures.
+# Monthly Cost: ₹0.00
+#
+# This blueprint defines the backend FastAPI service running on Render's free tier,
+# connecting to Neon PostgreSQL and serving the Vercel-hosted Next.js frontend.
+# ==============================================================================
+
+services:
+  - type: web
+    name: careershield-api
+    runtime: python
+    region: oregon
+    plan: free
+    branch: main
+    autoDeploy: true
+    rootDir: backend
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+      - key: APP_NAME
+        value: "CareerShield AI"
+      - key: APP_ENV
+        value: "production"
+      - key: DEBUG
+        value: "false"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: CORS_ORIGINS
+        sync: false
+        # Set to your actual live Vercel domain, e.g.: https://careershield-ai.vercel.app
+        # Note: Do NOT use localhost as the sole origin in production, or browser requests will be blocked by CORS.
+      - key: DATABASE_URL
+        sync: false
+        # Example: postgresql://user:password@ep-xyz-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require
+      - key: MODEL_ARTIFACTS_DIR
+        value: "artifacts/models"
+      - key: ANONYMIZE_IPS
+        value: "true"

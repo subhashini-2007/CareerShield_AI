@@ -95,7 +95,7 @@ export default function DashboardPage() {
       setData(summary);
     } catch (err) {
       console.error("Failed to load analytics summary:", err);
-      let msg = "Could not connect to FastAPI backend on port 8000. Ensure the backend server is running.";
+      let msg = "Could not connect to the CareerShield AI analytics service. If the server was idle, it may take a moment to wake up. Please refresh or retry.";
       if (axios.isAxiosError(err)) {
         msg = err.response?.data?.detail || err.message || msg;
       } else if (err instanceof Error) {

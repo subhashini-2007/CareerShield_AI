@@ -680,3 +680,24 @@ class TestPhase24AuditFixes:
         assert "senior cloud architect" in cleaned
         assert "acme global systems" in cleaned
         assert "comprehensive benefits" in cleaned
+
+    def test_production_database_and_cors_guardrails(self, monkeypatch):
+        """Verify production guardrails: SQLite & localhost rejected in production, postgres:// normalized, CORS trailing slashes stripped."""
+        from app.core.config import Settings
+
+        # 1. postgres:// auto-normalization
+        normalized = Settings.assemble_database_url("postgres://user:pass@ep-pooler.neon.tech/neondb?sslmode=require")
+        assert normalized.startswith("postgresql://")
+
+        # 2. In production, SQLite must be rejected to prevent ephemeral data loss
+        monkeypatch.setenv("APP_ENV", "production")
+        with pytest.raises(ValueError, match="Ephemeral SQLite is strictly forbidden in production"):
+            Settings.assemble_database_url("sqlite:///./careershield.db")
+
+        # 3. In production, default localhost database must be rejected
+        with pytest.raises(ValueError, match="Default localhost DATABASE_URL cannot be used in production"):
+            Settings.assemble_database_url("postgresql://postgres:postgres@localhost:5432/careershield_db")
+
+        # 4. CORS origin normalization (trailing slash removal & JSON array support)
+        origins = Settings.assemble_cors_origins('["https://careershield-ai.vercel.app/", "http://localhost:3000/"]')
+        assert origins == ["https://careershield-ai.vercel.app", "http://localhost:3000"]

@@ -33,7 +33,7 @@ export default function ModelInsightsPage() {
       setData(res);
     } catch (err) {
       console.error("Failed to load model transparency specs:", err);
-      let msg = "Could not connect to FastAPI backend on port 8000. Ensure the backend server is running.";
+      let msg = "Could not connect to the model transparency service. If the server was idle, it may take a moment to wake up. Please retry shortly.";
       if (axios.isAxiosError(err)) {
         msg = err.response?.data?.detail || err.message || msg;
       } else if (err instanceof Error) {

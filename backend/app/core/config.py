@@ -52,22 +52,74 @@ class Settings(BaseSettings):
     # Privacy Settings
     ANONYMIZE_IPS: bool = True
 
+    @field_validator("DATABASE_URL", mode="before")
+    @classmethod
+    def assemble_database_url(cls, v: str) -> str:
+        """Normalize database URL and enforce persistent PostgreSQL in production."""
+        if isinstance(v, str):
+            v_clean = v.strip()
+            # Neon and Render often provide 'postgres://', which SQLAlchemy 2.0 rejects
+            if v_clean.startswith("postgres://"):
+                v_clean = "postgresql://" + v_clean[len("postgres://"):]
+
+            # Strict production safety check:
+            # Ephemeral SQLite is strictly forbidden in production to prevent silent data loss on Render
+            env = os.getenv("APP_ENV", "development").lower()
+            if env == "production":
+                if v_clean.startswith("sqlite"):
+                    raise ValueError(
+                        "Production mode (APP_ENV=production) requires a persistent PostgreSQL database (Neon). "
+                        "Ephemeral SQLite is strictly forbidden in production to prevent silent data loss."
+                    )
+                if "localhost" in v_clean or "127.0.0.1" in v_clean:
+                    raise ValueError(
+                        "Production mode (APP_ENV=production) requires a valid remote PostgreSQL connection string "
+                        "(e.g., Neon PostgreSQL). Default localhost DATABASE_URL cannot be used in production."
+                    )
+            return v_clean
+        return v
+
     @field_validator("CORS_ORIGINS", mode="before")
     @classmethod
     def assemble_cors_origins(cls, v: Union[str, List[str]]) -> List[str]:
+        origins: List[str] = []
         if isinstance(v, str):
-            if v.startswith("[") and v.endswith("]"):
+            v_stripped = v.strip()
+            if v_stripped.startswith("[") and v_stripped.endswith("]"):
                 # Handle JSON list string
                 import json
 
                 try:
-                    return json.loads(v)
+                    parsed = json.loads(v_stripped)
+                    if isinstance(parsed, list):
+                        origins = [str(item).strip() for item in parsed if item]
                 except Exception:
-                    pass
-            return [origin.strip() for origin in v.split(",") if origin.strip()]
+                    origins = [origin.strip() for origin in v_stripped.strip("[]").split(",") if origin.strip()]
+            else:
+                origins = [origin.strip() for origin in v_stripped.split(",") if origin.strip()]
         elif isinstance(v, list):
-            return v
-        return ["http://localhost:3000", "http://127.0.0.1:3000"]
+            origins = [str(item).strip() for item in v if item]
+        else:
+            origins = ["http://localhost:3000", "http://127.0.0.1:3000"]
+
+        # Normalize: strip trailing slashes to guarantee exact Origin header matching
+        normalized = [o.rstrip("/") for o in origins if o]
+        final_origins = normalized if normalized else ["http://localhost:3000", "http://127.0.0.1:3000"]
+
+        # Warn if production is missing a production domain
+        env = os.getenv("APP_ENV", "development").lower()
+        if env == "production":
+            has_production_origin = any(
+                not ("localhost" in o or "127.0.0.1" in o) for o in final_origins
+            )
+            if not has_production_origin:
+                logger.warning(
+                    "CORS_ORIGINS contains only localhost in production! "
+                    "Browser requests from your Vercel deployment will be blocked until you configure "
+                    "your live Vercel URL (e.g. https://careershield-ai.vercel.app) in CORS_ORIGINS."
+                )
+
+        return final_origins
 
     @field_validator("SECRET_KEY")
     @classmethod
