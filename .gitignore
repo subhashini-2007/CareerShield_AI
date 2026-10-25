@@ -61,8 +61,14 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
-lib64/
+/lib/
+/lib64/
+backend/lib/
+backend/lib64/
+
+# Explicitly ensure frontend source library is tracked
+!frontend/src/lib/
+!frontend/src/lib/**
 parts/
 sdist/
 var/
